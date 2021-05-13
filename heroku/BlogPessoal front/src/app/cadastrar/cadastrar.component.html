@@ -1,0 +1,52 @@
+<div class="container-fluid" >
+
+    <div class="row">
+
+        <div class="col-md-6" id="img-bg"></div>
+
+        <div class="col-md-6 mt-5 mb-5">
+            
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-10">
+
+                    <h1 class="font-italic text-center">Cadastro</h1>
+
+                    <div class="form-group">
+                        <label for="nome">Nome</label>
+                        <input [(ngModel)]='user.nome' class="form-control" type="text" name="nome" id="nome" placeholder="Seu Nome">
+                    </div>
+                    <div class="form-group">
+                        <label for="usuario">Usuárie</label>
+                        <input [(ngModel)]='user.usuario' class="form-control" type="text" name="usuario" id="usuario" placeholder="Seu Usuárie">
+                    </div>
+                    <div class="form-group">
+                        <label for="foto">Link da foto</label>
+                        <input [(ngModel)]='user.foto' class="form-control" type="text" name="foto" id="foto" placeholder="Link da sua foto">
+                    </div>
+                    <div class="form-group">
+                        <label for="senha">Senha</label>
+                        <input (input)='confirmSenha($event)' class="form-control" type="password" name="senha" id="senha" placeholder="Sua Senha">
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmSenha">Confirme a senha</label>
+                        <input [(ngModel)]='user.senha' class="form-control" type="password" name="confirmSenha" id="confirmSenha"
+                            placeholder="Confirme sua senha">
+                    </div>
+                    <div class="form-group">
+                        <label for="tipo">Tipo de Usuárie</label>
+                        <select class="form-control" name="tipo" id="tipo" (change)='tipoUser($event)'>
+                        <option>Selecione um tipo de usuárie</option>
+                        <option value="normal">Normal</option>
+                        <option value="adm">Administrador</option></select>
+                    </div>
+
+                    <div class="d-flex justify-content-center mr-4">
+                        <button type="submit" class="btn btn-danger mr-4" routerLink = '/entrar'>Cancelar</button>
+                        <button type="submit" class="btn btn-success mr-4" (click)='cadastrar()'>Cadastrar</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

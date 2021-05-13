@@ -1,0 +1,77 @@
+<div class="container-fluid">
+
+    <div class="row bg-dark">
+
+        <div class="col-md-12 text-white">
+
+            <a routerLink='/inicio' class="text-white text-left font-italic">
+            
+            <i><img src="../../assets/img/leftarrow.png" alt="Seta para esquerda">Início</i>
+            </a>
+
+            <h1 class="fs text-center font-italic">Temas</h1>
+            <h5 class="fs-18 text-center font-italic">Veja aqui todos os temas criados ou crie um novo: </h5>
+
+            <div class="row d-flex justify-content-center mt-4 mb-5">
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <input [(ngModel)]='tema.descricao' type="text" class="form-group justify-content-center" id="descricao"
+                         placeholder="Digite a descrição do tema ">
+                    </div>
+
+                        <div class="d-flex justify-content-center">
+
+                            <button class="btn btn-light font-italic" (click)='cadastrar()'>Criar</button>
+
+                        </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="container">
+
+    <div class="row mt-5">
+
+        <div class="col-md-12">
+
+            <h2 class="texte-center">Todos os temas: </h2>
+
+        </div>
+
+    </div>
+
+    <div class="row mt-3 mb-5 d-flex justify-content-center">
+
+        <div class="col-md-6">
+
+            <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th class="font-italic" scope="col">Descrição</th>
+                    <th class="font-italic text-right" scope="col">Modificações</th>
+                    <!--se apagar um th, apague um td também-->
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor='let item of listaTemas'> <!--metodo for 'tema' é um variável-->
+                    <th>{{item.id}}</th> <!--interpolação-->
+                    <td>{{item.descricao}}</td>
+                    <td class="d-flex justify-content-end">
+                      <button class="btn btn-info mr-3" [routerLink]="['/tema-edit', item.id]">Editar</button>
+                      <button class="btn btn-danger" [routerLink]="['/tema-delete', item.id]">Apagar</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+        </div>
+
+    </div>
+
+</div>

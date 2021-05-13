@@ -1,0 +1,14 @@
+a{
+    cursor: pointer;
+}
+
+ul.social{
+    list-style: none;
+    padding: 0%;
+}
+
+ul.social li{
+    display: inline;
+    margin: 0;
+    padding: 5px;
+}

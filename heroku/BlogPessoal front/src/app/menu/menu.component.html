@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+      <ul class="navbar-nav mr-auto d-flex align-items-center">
+        <li class="nav-item active">
+          <img src="{{foto}}" alt="imagem do user" width="50px" height="50px" class="img-fluid rounded-circle">
+        </li>
+        <li class="nav-item pl-3 fs-16">
+          <p class="m-0 font-italic text-white">Hello, {{nome}}</p>
+        </li>
+        <li class="nav-item pl-3 fs-16">
+            <a [routerLink]="['/user-edit', id]">
+                <img class="tm" src="../../assets/img/edit.png" alt="">
+            </a> 
+          </li>
+      </ul>
+      <ul class="navbar-nav ml-auto d-flex align-items-center">
+        <li class="nav-item pl-3 fs-16">
+            <a (click)='sair()' class="m-0 font-italic text-white">Sair <img src="../../assets/img/logout.png"></a>
+          </li>
+      </ul>
+
+    </div>
+  </nav>
